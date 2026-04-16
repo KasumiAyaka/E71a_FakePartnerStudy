@@ -1,0 +1,175 @@
+//data_alltrk
+tree->Draw("dz>>posbefore(100,-3500,100)","pid==13&&ntrk>1&&material>-1");
+tree->Draw("dz>>wt(100,-3500,100)","pid==13&&ntrk>1&&material==0");
+tree->Draw("dz>>Ir(100,-3500,100)","pid==13&&ntrk>1&&material==2");
+tree->Draw("dz>>em(100,-3500,100)","pid==13&&ntrk>1&&material==5");
+tree->Draw("dz>>bs(100,-3500,100)","pid==13&&ntrk>1&&material==1");
+c1->SaveAs("plot_alltrk/water/dz_of_material.png");
+
+tree->Draw("dz>>posbefore(100,-3500,100)","pid==13&&ntrk==1&&material>-1");
+tree->Draw("dz>>wt(100,-3500,100)","pid==13&&ntrk==1&&material==0");
+tree->Draw("dz>>Ir(100,-3500,100)","pid==13&&ntrk==1&&material==2");
+tree->Draw("dz>>em(100,-3500,100)","pid==13&&ntrk==1&&material==5");
+tree->Draw("dz>>bs(100,-3500,100)","pid==13&&ntrk==1&&material==1");
+c1->SaveAs("plot_alltrk/water/dz_of_material_single.png");
+
+//data
+tree->Draw("dz>>wt(100,-3500,100)","pid==13&&ntrk_all>1&&material==0");
+tree->Draw("dz>>Ir(100,-3500,100)","pid==13&&ntrk_all>1&&material==2");
+tree->Draw("dz>>em(100,-3500,100)","pid==13&&ntrk_all>1&&material==5");
+tree->Draw("dz>>bs(100,-3500,100)","pid==13&&ntrk_all>1&&material==1");
+
+c1->SaveAs("plot/water/dz_of_material.png");
+
+gStyle->SetGridColor(17)
+gPad->SetGrid()
+
+wt->SetFillColor(kAzure-3);
+wt->SetFillStyle(3002);
+wt->Draw()
+
+Ir->SetFillColor(kPink-3);
+Ir->SetFillStyle(3001);
+Ir->Draw("same")
+
+em->SetFillColor(kTeal-3);
+em->SetFillStyle(3001);
+em->Draw("same")
+
+bs->SetFillColor(kYellow);
+bs->SetFillStyle(3001);
+bs->Draw("same")
+
+TLegend *leg =  new TLegend(0.10,0.65,0.25,0.88);
+leg->AddEntry("wt","water","f");
+leg->AddEntry("Ir","Iron","f");
+leg->AddEntry("em","emulsion","f");
+leg->AddEntry("bs","bs","f");
+leg->Draw();
+
+
+
+
+
+TLine *l = new TLine(0,0,0,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-70,0,-70,1.1);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-179,0,-179,1.1);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-2479,0,-2479,4.2);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-2588,0,-2588,4.2);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-2658,0,-2658,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-2868,0,-2868,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+
+TLine *l = new TLine(-2938,0,-2938,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+
+TLine *l = new TLine(-3438,0,-3438,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+
+
+
+
+
+// iron
+//data_alltrk
+tree->Draw("dz>>posbefore(75,-1200,100)","pid==13&&ntrk>1&&material>-1");
+tree->Draw("dz>>wt(75,-1200,100)","pid==13&&ntrk>1&&material==0");
+tree->Draw("dz>>Ir(75,-1200,100)","pid==13&&ntrk>1&&material==2");
+tree->Draw("dz>>em(75,-1200,100)","pid==13&&ntrk>1&&material==5");
+tree->Draw("dz>>bs(75,-1200,100)","pid==13&&ntrk>1&&material==1");
+
+//data
+tree->Draw("dz>>wt(75,-1200,100)","pid==13&&ntrk_all>1&&material==0");
+tree->Draw("dz>>Ir(75,-1200,100)","pid==13&&ntrk_all>1&&material==2");
+tree->Draw("dz>>em(75,-1200,100)","pid==13&&ntrk_all>1&&material==5");
+tree->Draw("dz>>bs(75,-1200,100)","pid==13&&ntrk_all>1&&material==1");
+
+
+
+
+gStyle->SetGridColor(17)
+gPad->SetGrid()
+
+
+Ir->SetFillColor(kPink-3);
+Ir->SetFillStyle(3002);
+Ir->Draw()
+
+wt->SetFillColor(kAzure-3);
+wt->SetFillStyle(3001);
+wt->Draw("same")
+
+em->SetFillColor(kTeal-3);
+em->SetFillStyle(3001);
+em->Draw("same")
+
+bs->SetFillColor(kYellow);
+bs->SetFillStyle(3001);
+bs->Draw("same")
+
+TLegend *leg =  new TLegend(0.85,0.98,0.65,0.78);
+leg->AddEntry("Ir","Iron","f");
+leg->AddEntry("wt","water","f");
+leg->AddEntry("em","emulsion","f");
+leg->AddEntry("bs","bs","f");
+leg->Draw();
+
+
+
+TLine *l = new TLine(0,0,0,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-70,0,-70,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-570,0,-570,5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-640,0,-640,5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-850,0,-850,5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-920,0,-920,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+TLine *l = new TLine(-1029,0,-1029,2.5);
+l->SetLineColor(kGray+1);
+l->Draw();
+
+// data_all
+c1->SaveAs("plot_alltrk/iron/dz_of_material.png");
+
+//data
+c1->SaveAs("plot/iron/dz_of_material.png");
