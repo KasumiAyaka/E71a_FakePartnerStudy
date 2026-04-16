@@ -20,3 +20,12 @@ git push
 git add MC_bat
 git commit -m "first commit of batchfile for MC"
 git push
+
+
+git add prg
+git commit -m "first commit of prg"
+git push
+
+git add README.md
+git commit -m "add comments"
+git push
